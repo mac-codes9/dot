@@ -14,6 +14,7 @@ alias gf="git fetch"
 alias gpl="git pull"
 alias gpu="git push -u origin"
 alias gpn="git pull --no-rebase"
+alias cs="gh copilot suggest"
 
 source ~/.zplug/init.zsh
 zplug "IngoMeyer441/zsh-easy-motion"
