@@ -4,6 +4,3 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/data/data/com.termux/files/usr/bin/gh auth git-credential
-[user]
-	email = maclong9@icloud.com
-	name = Mac

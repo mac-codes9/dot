@@ -22,4 +22,4 @@ zplug "jeffreytse/zsh-vi-mode"
 zplug "marlonrichert/zsh-autocomplete"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
-bindkey -M vicmd 's' vi-easy-motion
+zplug load
