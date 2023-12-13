@@ -1,7 +1,7 @@
 .config/github-copilot
 .cache
 .local
-.npm
+.npm*
 .vim
 .viminfo
 .zplug
