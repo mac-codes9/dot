@@ -16,6 +16,7 @@ alias gpl="git pull"
 alias gpu="git push -u origin"
 alias gpn="git pull --no-rebase"
 alias cs="gh copilot suggest"
+alias hf="hyperfine"
 
 source ~/.zplug/init.zsh
 zplug "MichaelAquilina/zsh-you-should-use"
