@@ -7,10 +7,13 @@ tools
   - computer
     - common
       - eww
+      - julia
+      - kitty
       - neovim
-      -
+      - obs
+      - orbstack
     - linux
       - hyprland
-      -
+      - firefox
     - mac
-      - 
+      - amethyst
