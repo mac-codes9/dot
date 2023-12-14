@@ -1,3 +1,5 @@
+export install=(golang hyperfine rust nodejs vim zig zsh)
+
 eval "$(starship init zsh)"
 
 alias zc="vim ~/.zshrc"
