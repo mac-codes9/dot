@@ -15,6 +15,7 @@ alias gf="git fetch"
 alias gpl="git pull"
 alias gpu="git push -u origin"
 alias gpn="git pull --no-rebase"
+alias ghb="gh browse"
 alias cs="gh copilot suggest"
 alias hf="hyperfine"
 
