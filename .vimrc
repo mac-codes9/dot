@@ -12,3 +12,4 @@ call plug#begin()
 call plug#end()
 
 nmap s <Plug>(easymotion-overwin-f)
+nmap f :Files<cr>
