@@ -36,3 +36,13 @@ remove
       - 
     - mac
       -
+settings 
+  - mobile
+    -
+  - computer
+    - common
+      - .termux
+    - linux
+      - 
+    - mac
+      -
