@@ -24,6 +24,10 @@ alias gpn="git pull --no-rebase"
 alias gl="git log --oneline"
 alias ghb="gh browse"
 alias cs="gh copilot suggest"
+alias csg="gh copilot suggest -t git"
+alias csh="gh copilot suggest -t gh"
+alias css="gh copilot suggest -t shell"
+alias ce="gh copilot explain"
 
 source ~/.zplug/init.zsh
 zplug "MichaelAquilina/zsh-you-should-use"
