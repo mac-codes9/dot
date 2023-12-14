@@ -1,0 +1,7 @@
+tools
+  - common
+   - golang
+   - rust
+   - nodejs
+   - zig
+  - computer
