@@ -1,5 +1,6 @@
 .config/gh
 .config/gh-copilot
+.config/github-copilot
 .cache
 .gitignore
 .local
