@@ -2,7 +2,7 @@
 .config/gh-copilot
 .config/github-copilot
 .cache
-.gitignore
+.gitconfig
 .local
 .npm*
 .vim
