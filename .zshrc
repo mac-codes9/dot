@@ -17,10 +17,12 @@ alias gpn="git pull --no-rebase"
 alias cs="gh copilot suggest"
 
 source ~/.zplug/init.zsh
-zplug "IngoMeyer441/zsh-easy-motion"
 zplug "MichaelAquilina/zsh-you-should-use"
+zplug "hchbaw/zce.zsh"
 zplug "jeffreytse/zsh-vi-mode"
 zplug "marlonrichert/zsh-autocomplete"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug load
+
+bindkey '^s' zce
