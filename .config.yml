@@ -19,4 +19,10 @@ tools
       - hyprland
       - firefox
     - mac
-      - amethyst
+      - brew
+        - amethyst
+        - was
+      - mas
+        - music tools
+        - video tools
+        - xcode
