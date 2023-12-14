@@ -26,3 +26,13 @@ tools
         - music tools
         - video tools
         - xcode
+remove
+  - mobile
+    -
+  - computer
+    - common
+      - .termux
+    - linux
+      - 
+    - mac
+      -
