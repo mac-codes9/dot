@@ -3,9 +3,15 @@ user
   email: maclong9@icloud.com
 tools
   - common
+   - bat
+   - dust
+   - eza
+   - fd
    - golang
-   - rust
+   - hyperfine
    - nodejs
+   - rust
+   - tokei
    - zig
   - computer
     - common
