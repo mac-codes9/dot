@@ -1,5 +1,5 @@
 if [ -d "$HOME/.termux" ]; then
-  PKG update; pkg add yq git
+  pkg update; pkg add yq git
   git clone https://github.com/mac-codes9/dot
   yq e '.tools.common' config.yml | xargs -n1 pkg install -y
 fi
