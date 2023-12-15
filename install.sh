@@ -1,6 +1,6 @@
 if [ -d "$HOME/.termux" ]; then
   pkg update; pkg add yq git
-  git clone https://github.com/mac-codes9/dot
+  git clone https://github.com/mac-codes9/dot .
   yq e '.tools.common' config.yml | xargs -n1 pkg install -y
 fi
 # TODO: add commandn for mac and linux
