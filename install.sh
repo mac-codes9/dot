@@ -5,7 +5,7 @@ if [ -d "$HOME/.termux" ]; then
   git remote add origin https://github.com/mac-codes9/dot
   git pull origin master
   yq e '.tools.common' config.yml | xargs -n1 pkg install -y
-  pkg upgrade 
+  pkg upgrade -y
 fi
 
 chsh -s $(which zsh)
