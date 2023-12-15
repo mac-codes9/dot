@@ -44,7 +44,7 @@ remove:
   computer:
     common:
       - 'rm -rf .termux'
-      - 'eza'
+      - 'exa'
     linux:
       - 
     mac:
