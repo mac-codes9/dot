@@ -1,5 +1,6 @@
 if [ -d "$HOME/.termux" ]; then
-  pkg update; pkg add yq git  
+  pkg update; pkg add yq git
+  rm -rf .termux
   git init .
   git remote add origin https://github.com/mac-codes9/dot
   git pull origin master
