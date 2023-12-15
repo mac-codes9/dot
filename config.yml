@@ -10,7 +10,9 @@ tools:
    - golang
    - hyperfine
    - nodejs
+   - perl
    - rust
+   - starship
    - tokei
    - zig
    - zsh
