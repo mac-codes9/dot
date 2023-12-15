@@ -2,7 +2,7 @@ user:
   name: Mac
   email: maclong9@icloud.com
 tools:
-  - common
+  common:
    - bat
    - dust
    - eza
@@ -13,42 +13,43 @@ tools:
    - rust
    - tokei
    - zig
-  - computer:
-    - common:
+   - zsh
+  computer:
+    common:
       - eww
       - julia
       - kitty
       - neovim
       - obs
       - orbstack
-    - linux:
+    linux:
       - hyprland
       - firefox
-    - mac:
-      - brew:
+    mac:
+      brew:
         - amethyst
         - was
-      - mas:
+      mas:
         - music tools
         - video tools
         - xcode
 remove:
-  - mobile:
+  mobile:
     -
-  - computer:
-    - common:
+  computer:
+    common:
       - .termux
-    - linux:
+    linux:
       - 
-    - mac:
+    mac:
       -
 settings:
-  - mobile:
+  mobile:
     -
-  - computer:
-    - common:
+  computer:
+    common:
       -
-    - linux:
+    linux:
       - 
-    - mac:
+    mac:
       -

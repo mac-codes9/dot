@@ -1,6 +1,8 @@
 if [ -d "$HOME/.termux" ]; then
-	pkg add git vim zsh
+	pkg add yq
+  yq e '.tools.common' config.yml | xargs -n1 pkg install -y
 fi
+# TODO: add commandn for mac and linux
 chsh -s $(which zsh)
 
 git clone https://github.com/mac-codes9/dot .
