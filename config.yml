@@ -5,10 +5,11 @@ tools:
   common:
    - bat
    - dust
-   - exa
+   - eza
    - fd
    - golang
    - hyperfine
+   - nodejs
    - perl
    - rust
    - starship
