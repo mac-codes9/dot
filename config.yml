@@ -9,7 +9,6 @@ tools:
    - fd
    - golang
    - hyperfine
-   - nodejs
    - perl
    - rust
    - starship
