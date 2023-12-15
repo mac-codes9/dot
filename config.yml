@@ -15,6 +15,7 @@ tools:
    - starship
    - tmux
    - tokei
+   - vim
    - zig
    - zsh
   computer:
