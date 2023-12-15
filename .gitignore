@@ -4,6 +4,7 @@
 .cache
 .gitconfig
 .local
+.node_repl_history
 .npm*
 .vim
 .viminfo
