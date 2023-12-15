@@ -5,7 +5,7 @@ tools:
   common:
    - bat
    - dust
-   - eza
+   - exa
    - fd
    - golang
    - hyperfine
@@ -21,6 +21,7 @@ tools:
   computer:
     common:
       - eww
+      - eza
       - julia
       - kitty
       - neovim
@@ -42,7 +43,8 @@ remove:
     -
   computer:
     common:
-      - .termux
+      - 'rm -rf .termux'
+      - 'eza'
     linux:
       - 
     mac:
