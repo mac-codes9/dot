@@ -1,5 +1,5 @@
 if [ -d "$HOME/.termux" ]; then
-	pkg add yq
+  PKG update; pkg add yq
   yq e '.tools.common' config.yml | xargs -n1 pkg install -y
 fi
 # TODO: add commandn for mac and linux
