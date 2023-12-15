@@ -1,6 +1,8 @@
 if [ -d "$HOME/.termux" ]; then
-  pkg update; pkg add yq git
-  git clone --force https://github.com/mac-codes9/dot .
+  pkg update; pkg add yq git  
+  git init .
+  git remote add origin <repository-url>
+  git pull origin master
   yq e '.tools.common' config.yml | xargs -n1 pkg install -y
 fi
 
