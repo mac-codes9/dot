@@ -8,7 +8,7 @@ if [ -d "$HOME/.termux" ]; then
   pkg upgrade -y
 fi
 
-chsh -s $(which zsh)
+chsh -s $(command -v zsh)
 
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
