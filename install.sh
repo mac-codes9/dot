@@ -5,10 +5,9 @@ if [ -d "$HOME/.termux" ]; then
   git remote add origin https://github.com/mac-codes9/dot
   git pull origin master
   yq e '.tools.common' config.yml | xargs -n1 pkg install -y
-  pkg upgrade -y
 fi
 
-chsh -s $(command -v zsh)
+pkg upgrade -y
 
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
@@ -16,3 +15,5 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \  https://raw.githubuserconten
 
 zsh -c "source .zshrc; zplug install; zplug load"
 zsh -c "vim +PlugInstall +qall"
+
+chsh -s $(command -v zsh)
