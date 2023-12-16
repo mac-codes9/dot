@@ -1,6 +1,6 @@
 if [ -d "$HOME/.termux" ]; then
   pkg update
-  pkg upgrade
+  yes | pkg upgrade
   pkg add yq git
   rm -rf .termux
   git init .
