@@ -15,7 +15,7 @@ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/instal
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-zsh -c "source .zshrc; zplug install; zplug load"
+zsh -c "source ~/.zshrc; zplug install; zplug load"
 zsh -c "vim +PlugInstall +qall"
 
 chsh -s $(command -v zsh)
