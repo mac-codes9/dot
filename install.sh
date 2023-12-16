@@ -7,7 +7,7 @@ if [ -d "$HOME/.termux" ]; then
   yq e '.tools.common' config.yml | xargs -n1 pkg install -y
 fi
 
-pkg upgrade -y
+yes | pkg upgrade
 
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
