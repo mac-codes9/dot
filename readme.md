@@ -3,5 +3,5 @@
 ## Usage
 
 ```
-curl -sSl https://github.com/mac-codes9/dot/blob/master/install.sh | sh
+curl -sSl https://raw.githubusercontent.com/mac-codes9/dot/master/install.sh | sh
 ```
