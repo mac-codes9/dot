@@ -1,15 +1,14 @@
 #!/bin/sh
 clone_config() {
   cd
+  git init .  
+  git remote add origin https://github.com/mac-codes9/dot  
+  git pull origin master 
   git config --global user.email $(yq e '.user.name' config.yml)
   git config --global user.name $(yq e '.user.email' config.yml)
-  git init .
-  git remote add origin https://github.com/mac-codes9/dot
-  git pull origin master 
 }
 
 if [ -d "$HOME/.termux" ]; then
-  termux-setup-storage
   pkg update
   yes | pkg upgrade
   pkg install -y yq git
@@ -28,4 +27,3 @@ while [ ! -f ~/.zplug/init.zsh -o ! -f ~/.zplug/cache/defer_3_plugin.zsh ]; do
 done
 zsh -c "source ~/.zshrc && zplug update && zplug install && zplug load"
 chsh -s zsh
-zsh
