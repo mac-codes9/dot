@@ -38,7 +38,6 @@ zplug "jeffreytse/zsh-vi-mode"
 zplug "marlonrichert/zsh-autocomplete"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug load
 
 bindkey '^s' zce
