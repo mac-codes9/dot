@@ -23,8 +23,5 @@ vim +PlugInstall -c 'Copilot setup' +qall
 gh auth login
 
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-while [ ! -f ~/.zplug/init.zsh -o ! -f ~/.zplug/cache/defer_3_plugin.zsh ]; do
-  sleep 1
-done
 zsh -c "source ~/.zshrc && zplug update && zplug install && zplug load"
 chsh -s zsh
