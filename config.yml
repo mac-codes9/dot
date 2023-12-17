@@ -23,7 +23,6 @@ tools:
   computer:
     common:
       - eww
-      - eza
       - julia
       - kitty
       - neovim
@@ -35,29 +34,8 @@ tools:
     mac:
       brew:
         - amethyst
-        - was
+        - mas
       mas:
         - music tools
         - video tools
         - xcode
-remove:
-  mobile:
-    -
-  computer:
-    common:
-      - 'rm -rf .termux'
-      - 'exa'
-    linux:
-      - 
-    mac:
-      -
-settings:
-  mobile:
-    -
-  computer:
-    common:
-      -
-    linux:
-      - 
-    mac:
-      -
