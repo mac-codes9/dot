@@ -11,6 +11,7 @@ tools:
    - golang
    - hyperfine
    - ncurses-utils
+   - nodejs
    - perl
    - rust
    - starship
