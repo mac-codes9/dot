@@ -30,7 +30,7 @@ alias csg="gh copilot suggest -t git"
 alias csh="gh copilot suggest -t gh"
 alias css="gh copilot suggest -t shell"
 alias ce="gh copilot explain"
-alias postInstall="gh auth login; zplug update; zplug install; zplug load"
+alias postInstall="gh auth login; zug install; zplug load"
 
 source ~/.zplug/init.zsh
 zplug "MichaelAquilina/zsh-you-should-use"
