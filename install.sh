@@ -24,7 +24,7 @@ while [ ! -f ~/.zplug/init.zsh -o ! -f ~/.zplug/cache/defer_3_plugin.zsh ]; do
   sleep 1
 done
 
-zsh -c "source ~/.zshrc && zplug install && zplug load"
+zsh -c "source ~/.zshrc && zplug update && zplug install && zplug load"
 vim +PlugInstall +qall
 
 git config --global user.email $(yq e '.user.name' config.yml)
