@@ -1,3 +1,4 @@
+#!/bin/sh
 clone_config() {
   cd
   git init .
