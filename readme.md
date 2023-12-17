@@ -1,5 +1,7 @@
 # Dot
 
+My configuration files for UNIX Systems with a script that checks if running on Android Termux, Debian, Arch or macOS and then installs packages with the correct file manager and clones configuration files.
+
 ## Usage
 
 ```
