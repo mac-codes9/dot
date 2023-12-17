@@ -20,7 +20,9 @@ fi
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
-sleep 5
+while [ ! -f ~/.zplug/init.zsh -o ! -f ~/.zplug/cache/defer_3_plugin.zsh ]; do
+  sleep 1
+done
 
 zsh -c "source ~/.zshrc && zplug install && zplug load"
 vim +PlugInstall +qall
