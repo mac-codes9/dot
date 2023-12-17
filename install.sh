@@ -1,15 +1,15 @@
 if [ -d "$HOME/.termux" ]; then
+  termux-setup-storage
   pkg update
   yes | pkg upgrade
-  pkg add yq git
+  pkg install -y yq git
   rm -rf .termux
   git init .
   git remote add origin https://github.com/mac-codes9/dot
   git pull origin master
   yq e '.tools.common' config.yml | xargs -n1 pkg install -y
+  yes | pkg upgrade
 fi
-
-yes | pkg upgrade
 
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
