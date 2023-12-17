@@ -6,7 +6,8 @@
 .local
 .node_repl_history
 .npm*
-storage/
+.termux
 .vim
 .viminfo
 .zplug
+storage/
