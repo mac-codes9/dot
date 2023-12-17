@@ -20,3 +20,5 @@ zsh -c "source ~/.zshrc; zplug install; zplug load"
 zsh -c "vim +PlugInstall +qall"
 
 chsh -s $(command -v zsh)
+
+zsh;
