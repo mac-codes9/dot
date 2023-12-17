@@ -1,4 +1,4 @@
-function clone_config() {
+clone_config() {
   git init .
   git remote add origin https://github.com/mac-codes9/dot
   git pull origin master 
