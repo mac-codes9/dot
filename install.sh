@@ -1,4 +1,4 @@
-clone_config {
+clone_config() {
   cd
   git init .
   git remote add origin https://github.com/mac-codes9/dot
