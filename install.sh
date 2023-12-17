@@ -19,8 +19,7 @@ if [ -d "$HOME/.termux" ]; then
 fi
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim +PlugInstall -c 'Copilot setup' +qall
-gh auth login
+vim +PlugInstall +qall
 
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 zsh -c "source ~/.zshrc"
