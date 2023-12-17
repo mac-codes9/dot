@@ -1,8 +1,6 @@
 user:
   name: Mac
   email: maclong9@icloud.com
-gitconfig:
-  auto setup
 tools:
   common:
    - bat
