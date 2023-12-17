@@ -1,4 +1,4 @@
-# Dots
+# Dot
 
 ## Usage
 
