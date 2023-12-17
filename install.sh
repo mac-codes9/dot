@@ -22,6 +22,6 @@ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/instal
 
 sleep 2s
 
-zsh -c "zplug install && zplug load"
+zsh -ic "zplug install && zplug load"
 vim +PlugInstall +qall
 chsh -s zsh
