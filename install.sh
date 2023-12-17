@@ -11,7 +11,7 @@ if [ -d "$HOME/.termux" ]; then
   yes | pkg upgrade
   pkg install -y yq git
   rm -rf ~/.termux
-  clone_config
+  clone_config()
   yq e '.tools.common' config.yml | xargs -n1 pkg install -y
   yes | pkg upgrade
 fi
