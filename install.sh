@@ -26,6 +26,8 @@ done
 
 zsh -c "source ~/.zshrc && zplug install && zplug load"
 vim +PlugInstall +qall
+
 git config --global user.email $(yq e '.user.name' config.yml)
 git config --global user.name $(yq e '.user.email' config.yml)
+
 chsh -s zsh
