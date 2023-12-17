@@ -1,4 +1,5 @@
-clone_config() {
+clone_config {
+  cd
   git init .
   git remote add origin https://github.com/mac-codes9/dot
   git pull origin master 
@@ -9,8 +10,8 @@ if [ -d "$HOME/.termux" ]; then
   pkg update
   yes | pkg upgrade
   pkg install -y yq git
-  rm -rf .termux
-  clone_config()
+  rm -rf ~/.termux
+  clone_config
   yq e '.tools.common' config.yml | xargs -n1 pkg install -y
   yes | pkg upgrade
 fi
