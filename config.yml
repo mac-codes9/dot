@@ -15,6 +15,7 @@ tools:
       - nodejs
       - openssh
       - perl
+      - ripgrep
       - rust
       - starship
       - tealdeer
