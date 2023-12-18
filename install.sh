@@ -20,9 +20,5 @@ if [ -d "$HOME/.termux" ]; then
 fi
 
 curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh | sh
-
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim +PlugInstall +qall
- 
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 chsh -s zsh
