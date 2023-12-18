@@ -1,9 +1,10 @@
 eval "$(starship init zsh)"
+eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 
 source ~/.config/zsh/aliases.zsh
-
 source ~/.zplug/init.zsh
+
 zplug "jkcdarunday/zplug-blame"
 zplug "MichaelAquilina/zsh-you-should-use"
 zplug "hchbaw/zce.zsh"
