@@ -22,6 +22,9 @@ tools:
    - zig
    - zoxide
    - zsh
+   node:
+     - pnpm
+     - vercel
   computer:
     common:
       - eww
@@ -30,6 +33,8 @@ tools:
       - neovim
       - obs
       - orbstack
+      node:
+        - bun
     linux:
       - hyprland
       - firefox
