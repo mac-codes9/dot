@@ -1,5 +1,6 @@
 syntax on
 set nu nowrap shiftwidth=2 tabstop=2
+colorscheme theme
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs

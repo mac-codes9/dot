@@ -18,9 +18,9 @@ tools:
       - rust
       - starship
       - tealdeer
-      - tmux
       - tokei
       - vim
+      - zellij
       - zig
       - zoxide
       - zsh

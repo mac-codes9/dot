@@ -15,4 +15,5 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug check || zplug install
 zplug load
+
 bindkey "^s" zce
