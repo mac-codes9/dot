@@ -9,7 +9,7 @@
 .node_repl_history
 .npm*
 .ssh
-.termux/
+.termux
 .vim
 .viminfo
 .zplug
