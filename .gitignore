@@ -1,6 +1,7 @@
 .config/gh
 .config/gh-copilot
 .config/github-copilot
+.confic/neofetch
 .cache
 .dbus
 .gitconfig
