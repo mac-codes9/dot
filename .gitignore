@@ -2,6 +2,7 @@
 .config/gh-copilot
 .config/github-copilot
 .cache
+.dbus
 .gitconfig
 .local
 .node_repl_history
