@@ -20,6 +20,7 @@ tools:
    - tokei
    - vim
    - zig
+   - zoxide
    - zsh
   computer:
     common:
