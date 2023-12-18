@@ -2,39 +2,41 @@ user:
   name: Mac
   email: maclong9@icloud.com
 tools:
-  common:
-   - bat
-   - dust
-   - eza
-   - fd
-   - gh
-   - golang
-   - hyperfine
-   - ncurses-utils
-   - nodejs
-   - perl
-   - rust
-   - starship
-   - tealdeer
-   - tmux
-   - tokei
-   - vim
-   - zig
-   - zoxide
-   - zsh
-   node:
-     - pnpm
-     - vercel
+  all:
+    packages:
+      - bat
+      - dust
+      - eza
+      - fd
+      - gh
+      - golang
+      - hyperfine
+      - ncurses-utils
+      - nodejs
+      - openssh
+      - perl
+      - rust
+      - starship
+      - tealdeer
+      - tmux
+      - tokei
+      - vim
+      - zig
+      - zoxide
+      - zsh
+    node:
+      - pnpm
+      - vercel
   computer:
-    common:
+    packages:
       - eww
       - julia
       - kitty
       - neovim
       - obs
       - orbstack
-      node:
-        - bun
+    node:
+      - bun
     linux:
       - hyprland
       - firefox
