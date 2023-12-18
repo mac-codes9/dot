@@ -1,36 +1,6 @@
 eval "$(starship init zsh)"
 
-alias zc="vim ~/.zshrc"
-alias zr="source ~/.zshrc"
-alias vc="vim ~/.vimrc"
-alias v="vim"
-alias c="clear"
-alias rmf="rm -rf"
-alias ls="eza --icons"
-alias lsa="eza -a --icons"
-alias tree="eza --icons -T"
-alias tk="tokei"
-alias cat="bat -p --paging=never"
-alias du="dust"
-alias hf="hyperfine"
-alias gi="git init"
-alias gaa="git add ."
-alias gc="git commit -m"
-alias gac="git add .; git commit -m"
-alias gp="git push"
-alias gf="git fetch"
-alias gpl="git pull"
-alias gpu="git push -u origin"
-alias gpn="git pull --no-rebase"
-alias gl="git log --oneline"
-alias gs="git status"
-alias ghb="gh browse"
-alias cs="gh copilot suggest"
-alias csg="gh copilot suggest -t git"
-alias csh="gh copilot suggest -t gh"
-alias css="gh copilot suggest -t shell"
-alias ce="gh copilot explain"
-alias postInstall="gh auth login; zplug install; zplug load"
+source ~/.config/zsh/aliases.zsh
 
 source ~/.zplug/init.zsh
 zplug "MichaelAquilina/zsh-you-should-use"
@@ -39,6 +9,10 @@ zplug "jeffreytse/zsh-vi-mode"
 zplug "marlonrichert/zsh-autocomplete"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+if ! zplug check; then
+    zplug install
+fi
 zplug load
-
 bindkey '^s' zce
+
