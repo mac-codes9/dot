@@ -1,37 +1,3 @@
-if [ -d "/data/data/com.termux/files" ]; then
-    alias update="pkg update"
-    alias upgrade="pkg upgrade"
-    alias install="pkg install"
-    alias remove="pkg remove"
-    alias search="pkg search"
-    alias clean="pkg clean"
-    alias list="pkg list"
-elif [ uname -a | grep -i "debian" ]; then
-    alias update="sudo apt update"
-    alias upgrade="sudo apt upgrade"
-    alias install="sudo apt install"
-    alias remove="sudo apt remove"
-    alias search="sudo apt search"
-    alias clean="sudo apt clean"
-    alias list="sudo apt list"
-elif [ uname -a | grep -i "arch" ]; then
-    alias update="sudo pacman -Syu"
-    alias upgrade="sudo pacman -Syu"
-    alias install="sudo pacman -S"
-    alias remove="sudo pacman -R"
-    alias search="sudo pacman -Ss"
-    alias clean="sudo pacman -Sc"
-    alias list="sudo pacman -Q"
-elif [ uname -a | grep -i "mac" ]; then
-    alias update="brew update"
-    alias upgrade="brew upgrade"
-    alias install="brew install"
-    alias remove="brew remove"
-    alias search="brew search"
-    alias clean="brew cleanup"
-    alias list="brew list"
-fi
-
 alias zc="vim ~/.zshrc" 
 alias zr="source ~/.zshrc"
 alias vc="vim ~/.vimrc"
