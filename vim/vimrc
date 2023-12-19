@@ -1,5 +1,7 @@
 syntax on
 set nu nowrap shiftwidth=2 tabstop=2
+nmap s <Plug>(easymotion-overwin-f) 
+nmap f :Files<cr>
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -19,5 +21,3 @@ call plug#begin()
  Plug 'sheerun/vim-polyglot'
 call plug#end()
 
-nmap s <Plug>(easymotion-overwin-f)
-nmap f :Files<cr>
