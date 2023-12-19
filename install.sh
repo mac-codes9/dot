@@ -26,7 +26,7 @@ install_tools() {
 if [ -d "$HOME/.termux" ]; then
   pre_install pkg
   clone_config
-  install tools pkg
+  install_tools pkg
 fi
 
 curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh | sh
