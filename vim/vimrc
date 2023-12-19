@@ -2,6 +2,8 @@ syntax on
 set nu nowrap shiftwidth=2 tabstop=2
 nmap s <Plug>(easymotion-overwin-f) 
 nmap f :Files<cr>
+nmap Q :q<cr>
+nmap W :w<cr> 
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
