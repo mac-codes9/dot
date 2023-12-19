@@ -1,5 +1,5 @@
 #!/bin/sh
-preinstall() {
+pre_install() {
   $1 update
   yes | $1 upgrade
   $1 install -y yq git
