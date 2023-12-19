@@ -24,7 +24,7 @@ install_tools() {
 }
  
 if [ -d "$HOME/.termux" ]; then
-  reinstall pkg
+  pre_install pkg
   clone_config
   install tools pkg
 fi
