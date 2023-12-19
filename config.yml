@@ -4,6 +4,7 @@ user:
 tools:
   all:
     packages:
+      - atuin
       - bat
       - dust
       - eza
