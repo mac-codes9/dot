@@ -12,8 +12,8 @@ clone_config() {
   git init .  
   git remote add origin https://github.com/mac-codes9/dot  
   git pull origin master
-  ln -s vimrc ~/.vimrc
-  ln -s zshrc ~/.zshrc
+  ln -s vim/vimrc ~/.vimrc
+  ln -s zsh/zshrc ~/.zshrc
   git config --global user.email $(yq e '.user.name' config.yml)
   git config --global user.name $(yq e '.user.email' config.yml)
 }
