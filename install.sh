@@ -1,6 +1,14 @@
 #!/bin/sh
+preinstall() {
+  $1 update
+  yes | $1 upgrade
+  $1 install -y yq git
+} 
+
 clone_config() {
   cd
+  mkdir .config
+  cd .config
   git init .  
   git remote add origin https://github.com/mac-codes9/dot  
   git pull origin master 
@@ -8,15 +16,16 @@ clone_config() {
   git config --global user.name $(yq e '.user.email' config.yml)
 }
 
-if [ -d "$HOME/.termux" ]; then
-  pkg update
-  yes | pkg upgrade
-  pkg install -y yq git
-  rm -rf ~/.termux
-  clone_config
-  yq e '.tools.all.packages[]' config.yml | xargs pkg install -y
+install_tools() {
+  yq e '.tools.all.packages[]' config.yml | xargs $1 install -y
   yq e '.tools.all.node[]' config.yml | xargs npm install -g
   yes | pkg upgrade
+}
+ 
+if [ -d "$HOME/.termux" ]; then
+  preinstall(pkg) 
+  clone_config
+  install_tools(pkg)
 fi
 
 curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh | sh
