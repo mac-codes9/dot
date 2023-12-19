@@ -16,4 +16,5 @@ zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug check || zplug install
 zplug load
 
+bindkey -r "^s"
 bindkey "^s" zce
