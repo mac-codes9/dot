@@ -15,6 +15,7 @@ clone_config() {
   ln -s ~/.config/zsh/zshrc ~/.zshrc
   git config --global user.email $(yq e '.user.name' config.yml)
   git config --global user.name $(yq e '.user.email' config.yml)
+  git config --global push.autoSetupRemote always
 }
 
 install_tools() {
