@@ -24,7 +24,7 @@ install_tools() {
 }
  
 if [ -d "$HOME/.termux" ]; then
-  preinstall(pkg) 
+  pre_install(pkg) 
   clone_config
   install_tools(pkg)
 fi
