@@ -38,15 +38,7 @@ tools:
       - obs
       - orbstack
     node:
-      - bun
+     - bun
     linux:
-      - hyprland
       - firefox
-    mac:
-      brew:
-        - amethyst
-        - mas
-      mas:
-        - music tools
-        - video tools
-        - xcode
+      - hyprland
