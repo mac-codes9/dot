@@ -8,6 +8,11 @@ These configuration files help me reproduce my preferred development tools and e
 
 ## Usage
 
+1. Run the install script to prepare the home directory and install tools. 
 ```
 curl -sSl https://raw.githubusercontent.com/mac-codes9/dot/master/install.sh | sh
 ```
+
+2. Start zsh by running `zsh` or restarting your shell.
+
+3. Run the `postInstall` alias to setup tools that require interaction like logging in such as `gh` or `atuin`. 
