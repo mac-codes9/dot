@@ -22,4 +22,3 @@ call plug#begin()
  Plug 'junegunn/vim-plug'
  Plug 'sheerun/vim-polyglot'
 call plug#end()
-
