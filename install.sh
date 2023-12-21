@@ -16,6 +16,8 @@ clone_config() {
   git config --global user.email $(yq e '.user.name' config.yml)
   git config --global user.name $(yq e '.user.email' config.yml)
   git config --global push.autoSetupRemote true
+  cd
+  git clone https://github.com/mac-codes9/dot.wiki.git notes
 }
 
 install_tools() {
