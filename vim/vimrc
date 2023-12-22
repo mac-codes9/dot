@@ -1,5 +1,8 @@
 syntax on
-set nu nowrap shiftwidth=2 tabstop=2
+set nu nowrap nocompatible shiftwidth=2 tabstop=2
+autocmd BufRead,BufNewFile *.md set wrap
+filetype plugin on
+
 nmap s <Plug>(easymotion-overwin-f) 
 nmap f :Files<cr>
 nmap Q :q<cr>
@@ -21,4 +24,5 @@ call plug#begin()
  Plug 'junegunn/fzf.vim'
  Plug 'junegunn/vim-plug'
  Plug 'sheerun/vim-polyglot'
+ Plug 'vimwiki/vimwiki'
 call plug#end()
