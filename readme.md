@@ -9,7 +9,7 @@ These configuration files help me reproduce my preferred development tools and e
 
 The install script is written in `sh` so that it's executable on a variety of systems. 
 
-ZSH andVim plugins are managed with `zplug` and `vim-plug` respectively, this ensures reproducibility and minimal lines of code within my `.*rc` files.
+ZSH and Vim plugins are managed with `zplug` and `vim-plug` respectively, this ensures reproducibility and minimal lines of code within my `.*rc` files.
 
 ## Usage
 
