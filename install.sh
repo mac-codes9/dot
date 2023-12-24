@@ -32,6 +32,7 @@ if [ -d "$HOME/.termux" ]; then
   install_tools pkg
 fi
 
+mkdir docs
 curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh | sh
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 chsh -s zsh
