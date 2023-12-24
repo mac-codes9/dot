@@ -21,8 +21,8 @@ clone_config() {
 }
 
 install_tools() {
-  yq e '.tools.all.packages[]' config.yml | xargs $1 install -y
-  yq e '.tools.all.node[]' config.yml | xargs npm install -g
+  yq e '.tools.all.packages[]' ~/.config/config.yml | xargs $1 install -y
+  yq e '.tools.all.node[]' ~/.config/config.yml | xargs npm install -g
   yes | pkg upgrade
 }
  
