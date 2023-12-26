@@ -3,10 +3,6 @@ set nu nowrap nocompatible shiftwidth=2 tabstop=2
 autocmd BufRead,BufNewFile *.md set wrap
 filetype plugin on
 
-no s <Plug>(easymotion-overwin-f) 
-no f :Files<cr>
-no Q :q<cr>
-no W :w<cr> 
 noremap h h
 noremap t j
 noremap n k
@@ -15,6 +11,10 @@ noremap l n
 noremap L N
 noremap - $
 noremap _ ^
+no S <Plug>(easymotion-overwin-f) 
+no f :Files<cr>
+no Q :q<cr>
+no W :w<cr> 
 
 let g:user_emmet_leader_key=','
 
