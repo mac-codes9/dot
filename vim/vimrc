@@ -3,16 +3,16 @@ set nu nowrap nocompatible shiftwidth=2 tabstop=2
 autocmd BufRead,BufNewFile *.md set wrap
 filetype plugin on
 
-noremap h h
-noremap t j
-noremap n k
-noremap s l
-noremap l n
-noremap L N
-noremap - $
-noremap _ ^
+no h h
+no t j
+no n k
+no s l
+no l n
+no L N
+no - $
+no _ ^
 no S <Plug>(easymotion-overwin-f) 
-no f :Files<cr>
+no <expr> f (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
 no Q :q<cr>
 no W :w<cr> 
 
