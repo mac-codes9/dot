@@ -43,3 +43,8 @@ tools:
     linux:
       - firefox
       - hyprland
+    mac:
+      brew:
+        - mas
+      apps:
+        - logic
