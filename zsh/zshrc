@@ -6,12 +6,16 @@ source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/functions.zsh
 source ~/.zplug/init.zsh
 
-zplug "jkcdarunday/zplug-blame"
-zplug "MichaelAquilina/zsh-you-should-use"
+zplug "IngoMeyer441/zsh-easy-motion"
+zplug "djui/alias-tips"
 zplug "jeffreytse/zsh-vi-mode"
+zplug "jkcdarunday/zplug-blame"
 zplug "marlonrichert/zsh-autocomplete"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug check || zplug install
-zplug clean && zplug update && zplug load
+zplug load
+zplug_blame::print_load_time
+
+bindkey -M vicmd '^s' vi-easy-motion

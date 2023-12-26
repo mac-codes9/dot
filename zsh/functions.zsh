@@ -3,6 +3,11 @@ mkcd() {
 	cd $1
 }
 
+gafc() {
+  git add $1
+  git commit -m "$2"
+}
+
 system_check() {
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     if [[ -f /etc/arch-release ]]; then
