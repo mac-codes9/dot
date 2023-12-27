@@ -2,20 +2,26 @@ eval "$(starship init zsh)"
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 
-source ~/.config/zsh/aliases.zsh
-source ~/.config/zsh/functions.zsh
 source ~/.zplug/init.zsh
 
-zplug "IngoMeyer441/zsh-easy-motion"
+if [[ ! -d ~/.zplug ]]; then
+  git clone https://github.com/zplug/zplug ~/.zplug
+  source ~/.zplug/init.zsh && zplug update --self
+fi
+
+zplug "~/.config/zsh", from:local
+
 zplug "djui/alias-tips"
 zplug "jeffreytse/zsh-vi-mode"
 zplug "jkcdarunday/zplug-blame"
 zplug "marlonrichert/zsh-autocomplete"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
+zplug "hchbaw/zce.zsh"
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug check || zplug install
 zplug load
 zplug_blame::print_load_time
 
-bindkey -M vicmd '^s' vi-easy-motion
+bindkey -r "^s"
+bindkey "^s" zce
