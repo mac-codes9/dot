@@ -11,17 +11,16 @@ fi
 
 zplug "~/.config/zsh", from:local
 
+zplug "sharkdp/bat", as:command, hook-build:"cargo build --release"
+
 zplug "djui/alias-tips"
 zplug "jeffreytse/zsh-vi-mode"
-zplug "jkcdarunday/zplug-blame"
 zplug "marlonrichert/zsh-autocomplete"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "hchbaw/zce.zsh"
-zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug check || zplug install
 zplug load
-zplug_blame::print_load_time
 
 bindkey -r "^s"
 bindkey "^s" zce
