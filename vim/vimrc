@@ -16,8 +16,6 @@ no <expr> f (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standa
 no Q :q<cr>
 no W :w<cr> 
 
-let g:user_emmet_leader_key=','
-
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -38,3 +36,6 @@ call plug#begin()
  Plug 'sheerun/vim-polyglot'
  Plug 'vimwiki/vimwiki'
 call plug#end()
+
+let g:user_emmet_leader_key=','
+imap <silent><script><expr> <C-c> copilot#Accept("\<CR>")         
