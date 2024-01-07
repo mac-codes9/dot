@@ -13,6 +13,9 @@ elif [ -f "/etc/os-release" ] && [ "$(source /etc/os-release && echo "$ID")" = "
   echo "Runnin on Arch Linux"
   tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.computer.all.packages[] + .tools.computer.linux.packages[] | join(" ")'
   pacman -Syu
+else
+  echo "Unsupported environment"
+  exit
 fi
 
 pre_install() {
@@ -54,11 +57,7 @@ post_install() {
   fi
 }
 
-if [ -n "$tools" ]; then
-  pre_install
-  clone_config
-  install_tools
-  post_install
-else
-  echo "Error, may be on unsupported environment"
-fi
+pre_install
+clone_config
+install_tools
+post_install
