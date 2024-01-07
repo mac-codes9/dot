@@ -2,16 +2,12 @@ eval "$(starship init zsh)"
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 
-source ~/.zplug/init.zsh
+source ~/.config/zsh
 
 if [[ ! -d ~/.zplug ]]; then
   git clone https://github.com/zplug/zplug ~/.zplug
   source ~/.zplug/init.zsh && zplug update --self
 fi
-
-zplug "~/.config/zsh", from:local
-
-zplug "sharkdp/bat", as:command, hook-build:"cargo build --release"
 
 zplug "djui/alias-tips"
 zplug "jeffreytse/zsh-vi-mode"

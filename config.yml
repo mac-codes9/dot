@@ -4,17 +4,14 @@ user:
 tools:
   all:
     packages:
-      - atuin
       - bat
       - dust
       - eza
       - fd
       - gh
       - hyperfine
-      - ncurses-utils
       - neovim
       - nodejs
-      - openssh
       - perl
       - ripgrep
       - rust
@@ -24,26 +21,40 @@ tools:
       - vim
       - zellij
       - zig
-      - zoxide
-      - zsh
+    zsh:
+      packages:
+        - atuin
+        - zoxide
+        - zsh
+      plugins:
+        - djui/alias-tips
+        - jeffreytse/zsh-vi-mode
+        - marlonrichert/zsh-autocomplete
+        - zsh-users/zsh-autosuggestions
+        - zsh-users/zsh-syntax-highlighting
+        - hchbaw/zce.zsh
     node:
       - pnpm
       - vercel
-  computer:
+  mobile:
     packages:
-      - eww
-      - julia
-      - kitty
-      - neovim
-      - obs
-      - orbstack
-    node:
-     - bun
+      - ncurses-utils
+      - openssh
+  computer:
+    all:
+      packages:
+       - eww
+       - julia
+       - kitty
+       - neovim
+       - obs
+       - orbstack
+      node:
+       - bun
     linux:
-      - firefox
-      - hyprland
+      packages:
+        - firefox
+        - hyprland
     mac:
-      brew:
+      packages:
         - mas
-      apps:
-        - logic
