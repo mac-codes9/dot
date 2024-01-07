@@ -37,7 +37,7 @@ clone_config() {
 }
 
 install_tools() {
-  brew install $(yq e $tools $config)
+  brew install $(yq e "$tools" "$config")
   curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh | sh
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 }
