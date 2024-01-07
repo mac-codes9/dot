@@ -1,9 +1,3 @@
-git:
-  user:
-    name: Mac
-    email: maclong9@icloud.com
-  push:
-    autoSetupRemote: true
 tools:
   all:
     packages:

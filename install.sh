@@ -31,18 +31,13 @@ clone_config() {
   git pull origin master
   ln -s ~/.config/vim/vimrc ~/.vimrc
   ln -s ~/.config/zsh/zshrc ~/.zshrc
+  ln -s ~/.config/git/config ~/.gitconfig
   cd; git clone https://github.com/mac-codes9/dot.wiki.git notes
 }
 
-git_config() {
-  git config --global user.email $(yq e '.git.user.name' $config)
-  git config --global user.name $(yq e '.git.user.email' $config)
-  git config --global push.autoSetupRemote $(yq e '.git.push.autoSetupRemote' $config)
-}
 
 install_tools() {
   brew install $(yq e $tools $config)
-  # npm install -g $(yq e 'tools.node[]' $config)
   curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh | sh
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 }
