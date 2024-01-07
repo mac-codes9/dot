@@ -50,7 +50,9 @@ install_tools() {
 post_install() {
   mkdir docs
   cd docs git clone https://github.com/mac-codes9/portfolio
-  chsh -s zsh
+  if [ "$SHELL" != "/bin/zsh" ]; then
+    chsh -s zsh
+  fi
 }
 
 if [ -n "$tools" ]; then
