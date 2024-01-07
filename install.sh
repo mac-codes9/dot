@@ -7,7 +7,7 @@ if [ -d "$HOME/.termux" ]; then
   tools='.tools.all.packages[], .tools.all.zsh.packages[], .tools.mobile.packages[]'
 elif [ "$(uname -s)" = "Darwin" ]; then
   echo "Running on macOS"
-  tools='.tools.all.packages[],.tools.all.zsh.packages[], .tools.computer.all.packages[], .tools.computer.mac.packages[]'
+  tools='.tools.all.packages[], .tools.all.zsh.packages[], .tools.computer.all.packages[], .tools.computer.mac.packages[]'
 elif [ -f "/etc/os-release" ] && [ "$(source /etc/os-release && echo "$ID")" = "arch" ]; then
   echo "Runnin on Arch Linux"
   tools='.tools.all.packages[], .tools.all.zsh.packages[], .tools.computer.all.packages[], .tools.computer.linux.packages[]'
@@ -35,15 +35,14 @@ clone_config() {
 }
 
 git_config() {
-  git config --global user.email $(yq e '.git.user.name' $config)
+  git config --global user.email $(yq er '.git.user.name' $config)
   git config --global user.name $(yq e '.git.user.email' $config)
   git config --global push.autoSetupRemote $(yq e '.git.push.autoSetupRemote' $config)
 }
 
 install_tools() {
-  brew install $(yq e $tools $config)
-  npm install -g $(yq e 'tools.node[]' $config)
-  yq e $tools ~/.config/config.yml | xargs npm install -g
+  brew install $(yq r $tools $config)
+  npm install -g $(yq r 'tools.node[]' $config)
   curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh | sh
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 }
