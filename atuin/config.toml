@@ -1,21 +1,6 @@
-# date format used, either "us" or "uk"
 dialect = "uk"
-
-# enable or disable automatic sync
 auto_sync = true
-
-# enable or disable automatic update checks
 update_check = true
-
-# which filter mode to use
-# possible values: global, host, session, directory
 filter_mode = "global"
-
-# which filter mode to use when atuin is invoked from a shell up-key binding
-# the accepted values are identical to those of "filter_mode"
-# leave unspecified to use same mode set in "filter_mode"
 filter_mode_shell_up_key_binding = "directory"
-
-# Defaults to true. If enabled, upon hitting enter Atuin will immediately execute the command. Press tab to return to the shell and edit.
-# This applies for new installs. Old installs will keep the old behaviour unless configured otherwise.
 enter_accept = true
