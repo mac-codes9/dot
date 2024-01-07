@@ -5,7 +5,7 @@ tools=''
 if [ -d "$HOME/.termux" ]; then
   echo "Running on Termux"
   installer=pkg
-  tools = 'tools.all.packages[] + tools.all.zsh.packages[] + tools.all.node[] + tools.mobile.packages[] | join (" ")'
+  tools='tools.all.packages[] + tools.all.zsh.packages[] + tools.all.node[] + tools.mobile.packages[] | join (" ")'
 elif [ "$(uname -s)" = "Darwin" ]; then
   echo "Running on macOS"
   installer=brew
@@ -45,7 +45,7 @@ clone_config() {
 install_tools() {
   yq e $tools ~/.config/config.yml | xargs $installer install -y
   yq e $tools ~/.config/config.yml | xargs $installer npm install -g
-  yes | $installer upgrade
+  $installer upgrade
   curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh | sh
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 }
