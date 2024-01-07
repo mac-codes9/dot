@@ -15,7 +15,7 @@ fi
 pre_install() {
   if [ "$installer" = brew ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    source ~/.zshrc
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
 
   $installer update
