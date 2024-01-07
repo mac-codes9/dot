@@ -50,7 +50,7 @@ install_tools() {
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 }
 
-if [ -n "$installer"]; then
+if [ -n "$installer" ]; then
   pre_install
   clone_config
   install_tools
