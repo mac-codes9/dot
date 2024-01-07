@@ -16,7 +16,12 @@ fi
 pre_install() {
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   eval "$(/opt/homebrew/bin/brew shellenv)"
-  brew install yq git
+
+  if command -v git > /dev/null 2>&1; then
+    brew install yq
+  else
+    brew install yq git
+  fi
 }
 
 clone_config() {
