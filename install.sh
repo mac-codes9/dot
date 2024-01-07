@@ -13,7 +13,7 @@ elif [ "$(uname -s)" = "Darwin" ]; then
 fi
 
 pre_install() {
-  if [ $installer -eq brew ]
+  if [ "$installer" = "brew" ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
