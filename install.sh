@@ -5,12 +5,14 @@ config=~/.config/config.yml
 if [ -d "$HOME/.termux" ]; then
   echo "Running on Termux"
   tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.mobile.packages[] | join(" ")'
+  pkg update; pkg upgrade;
 elif [ "$(uname -s)" = "Darwin" ]; then
   echo "Running on macOS"
   tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.computer.all.packages[] + .tools.computer.mac.packages[] | join(" ")'
 elif [ -f "/etc/os-release" ] && [ "$(source /etc/os-release && echo "$ID")" = "arch" ]; then
   echo "Runnin on Arch Linux"
   tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.computer.all.packages[] + .tools.computer.linux.packages[] | join(" ")'
+  pacman -Syu
 fi
 
 pre_install() {
