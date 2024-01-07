@@ -4,13 +4,13 @@ config=~/.config/config.yml
 
 if [ -d "$HOME/.termux" ]; then
   echo "Running on Termux"
-  tools='tools.all.packages[] + tools.all.zsh.packages[] + tools.all.node[] + tools.mobile.packages[] | join (" ")'
+  tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.all.node[] + .tools.mobile.packages[] | join (" ")'
 elif [ "$(uname -s)" = "Darwin" ]; then
   echo "Running on macOS"
-  tools='tools.all.packages[] +tools.all.zsh.packages[] + tools.all.node[] + tools.computer.all.packages[] + tools.computer.all.node[] + tools.computer.mac.packages[] | join(" ")'
+  tools='.tools.all.packages[] +.tools.all.zsh.packages[] + .tools.all.node[] + .tools.computer.all.packages[] + .tools.computer.all.node[] + .tools.computer.mac.packages[] | join(" ")'
 elif [ -f "/etc/os-release" ] && [ "$(source /etc/os-release && echo "$ID")" = "arch" ]; then
   echo "Runnin on Arch Linux"
-  tools='tools.all.packages[] + tools.all.zsh.packages[] + tools.all.node[] + tools.computer.all.packages[] + tools.computer.all.node[] + tools.computer.linux.packages[] | join(" ")'
+  tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.all.node[] + .tools.computer.all.packages[] + .tools.computer.all.node[] + .tools.computer.linux.packages[] | join(" ")'
 fi
 
 pre_install() {
@@ -35,8 +35,8 @@ clone_config() {
 }
 
 git_config() {
-  git config --global user.email $(yq e 'git.user.name' $config)
-  git config --global user.name $(yq e 'git.user.email' $config)
+  git config --global user.email $(yq e '.git.user.name' $config)
+  git config --global user.name $(yq e '.git.user.email' $config)
   git config --global push.autoSetupRemote $(yq e 'git.push.autoSetupRemote' $config)
 }
 
