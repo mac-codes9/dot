@@ -15,6 +15,7 @@ fi
 pre_install() {
   if [ "$installer" = brew ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    source ~/.zshrc
   fi
 
   $installer update
@@ -62,7 +63,6 @@ if [ -n "$installer" ]; then
   git_config
   install_tools
   post_install
-else 
+else
   echo "No installer set, may be on unsupported environment"
 fi
-
