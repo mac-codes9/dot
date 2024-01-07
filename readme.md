@@ -21,3 +21,5 @@ curl -sSl https://raw.githubusercontent.com/mac-codes9/dot/master/install.sh | s
 2. Start zsh by running `zsh` or restarting your terminal.
 
 3. Run the `postInstall` alias to setup tools that require interaction like logging in such as `gh` or `atuin`. 
+
+> Note: On macOS this script requires that at least git is installed.
