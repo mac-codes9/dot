@@ -18,7 +18,6 @@ pre_install() {
   fi
 
   $installer update
-  $installer upgrade
 
   if [ "$installer" = brew ]; then
     $installer install -y yq
