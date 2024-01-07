@@ -4,13 +4,13 @@ config=~/.config/config.yml
 
 if [ -d "$HOME/.termux" ]; then
   echo "Running on Termux"
-  tools='.tools.all.packages[], .tools.all.zsh.packages[], .tools.mobile.packages[]'
+  tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.mobile.packages[] | join(" ")'
 elif [ "$(uname -s)" = "Darwin" ]; then
   echo "Running on macOS"
-  tools='.tools.all.packages[], .tools.all.zsh.packages[], .tools.computer.all.packages[], .tools.computer.mac.packages[]'
+  tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.computer.all.packages[] + .tools.computer.mac.packages[] | join(" ")'
 elif [ -f "/etc/os-release" ] && [ "$(source /etc/os-release && echo "$ID")" = "arch" ]; then
   echo "Runnin on Arch Linux"
-  tools='.tools.all.packages[], .tools.all.zsh.packages[], .tools.computer.all.packages[], .tools.computer.linux.packages[]'
+  tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.computer.all.packages[] + .tools.computer.linux.packages[] | join(" ")'
 fi
 
 pre_install() {
@@ -41,8 +41,8 @@ git_config() {
 }
 
 install_tools() {
-  brew install $(yq r $tools $config)
-  npm install -g $(yq r 'tools.node[]' $config)
+  brew install $(yq e $tools $config)
+  npm install -g $(yq e 'tools.node[]' $config)
   curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh | sh
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 }
