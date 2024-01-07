@@ -13,13 +13,18 @@ elif [ "$(uname -s)" = "Darwin" ]; then
 fi
 
 pre_install() {
-  if [ "$installer" = "brew" ]; then
+  if [ "$installer" = brew ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
   $installer update
   $installer upgrade
-  $installer install -y yq git
+
+  if [ "$installer" = brew ]; then
+    $installer install -y yq
+  else
+    $installer install -y yq git
+  fi
 }
 
 post_install() {
@@ -35,11 +40,13 @@ clone_config() {
   git pull origin master
   ln -s ~/.config/vim/vimrc ~/.vimrc
   ln -s ~/.config/zsh/zshrc ~/.zshrc
+  cd; git clone https://github.com/mac-codes9/dot.wiki.git notes
+}
+
+git_config() {
   git config --global user.email $(yq e 'user.name' config.yml)
   git config --global user.name $(yq e 'user.email' config.yml)
   git config --global push.autoSetupRemote true
-  cd
-  git clone https://github.com/mac-codes9/dot.wiki.git notes
 }
 
 install_tools() {
@@ -53,6 +60,7 @@ install_tools() {
 if [ -n "$installer" ]; then
   pre_install
   clone_config
+  git_config
   install_tools
   post_install
 else 
