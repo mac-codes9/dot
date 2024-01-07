@@ -22,4 +22,4 @@ curl -sSl https://raw.githubusercontent.com/mac-codes9/dot/master/install.sh | s
 
 3. Run the `postInstall` alias to setup tools that require interaction like logging in such as `gh` or `atuin`.
 
-> Note: On macOS this script requires that at least git is installed. The script may also need to be prefixed with `sudo` in case brew needs installing.
+> Note: On macOS the script may need to be prefixed with `sudo` for the Homebrew installation.
