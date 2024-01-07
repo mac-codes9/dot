@@ -2,6 +2,10 @@ eval "$(starship init zsh)"
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 
+if [[ "$(uname -s)" = "Darwin" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 source ~/.config/zsh
 
 if [[ ! -d ~/.zplug ]]; then
