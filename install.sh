@@ -1,6 +1,6 @@
 #!/bin/sh
 tools=''
-config='~/.config/config.yml'
+config=~/.config/config.yml
 
 if [ -d "$HOME/.termux" ]; then
   echo "Running on Termux"
