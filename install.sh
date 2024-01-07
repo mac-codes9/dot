@@ -50,7 +50,7 @@ git_config() {
 }
 
 install_tools() {
-  yq e $tools ~/.config/config.yml | xargs $installer install -y
+  yq e $tools ~/.config/config.yml | xargs yes | $installer install
   yq e $tools ~/.config/config.yml | xargs $installer npm install -g
   $installer upgrade
   curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh | sh
