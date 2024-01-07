@@ -18,6 +18,6 @@ ZSH and Vim plugins are managed with `zplug` and `vim-plug` respectively, this e
 curl -sSl https://raw.githubusercontent.com/mac-codes9/dot/master/install.sh | sh
 ```
 
-2. Start zsh by running `zsh` or restarting your shell.
+2. Start zsh by running `zsh` or restarting your terminal.
 
 3. Run the `postInstall` alias to setup tools that require interaction like logging in such as `gh` or `atuin`. 
