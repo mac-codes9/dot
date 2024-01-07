@@ -36,7 +36,6 @@ clone_config() {
   cd; git clone https://github.com/mac-codes9/dot.wiki.git notes
 }
 
-
 install_tools() {
   brew install $(yq e $tools $config)
   curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh | sh
@@ -54,7 +53,6 @@ post_install() {
 if [ -n "$tools" ]; then
   pre_install
   clone_config
-  git_config
   install_tools
   post_install
 else
