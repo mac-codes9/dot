@@ -5,6 +5,7 @@ config=~/.config/config.yml
 if [ -d "$HOME/.termux" ]; then
   echo "Running on Termux"
   tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.mobile.packages[] | join(" ")'
+  pkg in -y ruby
 elif [ "$(uname -s)" = "Darwin" ]; then
   echo "Running on macOS"
   tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.computer.all.packages[] + .tools.computer.mac.packages[] | join(" ")'
