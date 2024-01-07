@@ -1,6 +1,9 @@
-user:
-  name: Mac
-  email: maclong9@icloud.com
+git:
+  user:
+    name: Mac
+    email: maclong9@icloud.com
+  push:
+    autoSetupRemote: true
 tools:
   all:
     packages:
@@ -43,7 +46,6 @@ tools:
   computer:
     all:
       packages:
-       - eww
        - julia
        - kitty
        - neovim
@@ -54,7 +56,9 @@ tools:
     linux:
       packages:
         - firefox
-        - hyprland
     mac:
       packages:
         - mas
+    nonbrew:
+      - hyprland
+      - eww
