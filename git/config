@@ -1,0 +1,7 @@
+[user]
+	email = Mac
+	name = maclong9@icloud.com
+[push]
+	autoSetupRemote = true
+[commit]
+  template = ./commitmsg
