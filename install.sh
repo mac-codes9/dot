@@ -1,29 +1,27 @@
 #!/bin/sh
-installer=''
 tools=''
 
 if [ -d "$HOME/.termux" ]; then
   echo "Running on Termux"
-  installer=pkg
   tools='tools.all.packages[] + tools.all.zsh.packages[] + tools.all.node[] + tools.mobile.packages[] | join (" ")'
 elif [ "$(uname -s)" = "Darwin" ]; then
   echo "Running on macOS"
-  installer=brew
-  tools='tools.all.packages[] + tools.all.zsh.packages[] + tools.all.node[] + tools.computer.all.packages[] + tools.computer.all.node[] + tools.computer.mac.packages[] | join(" ")'
+  tools='tools.all.packages[] +tools.all.zsh.packages[] + tools.all.node[] + tools.computer.all.packages[] + tools.computer.all.node[] + tools.computer.mac.packages[] | join(" ")'
+elif [ -f "/etc/os-release" ] && [ "$(source /etc/os-release && echo "$ID")" = "arch" ]; then
+  echo "Runnin on Arch Linux"
+  tools='tools.all.packages[] + tools.all.zsh.packages[] + tools.all.node[] + tools.computer.all.packages[] + tools.computer.all.node[] + tools.computer.linux.packages[] | join(" ")'
 fi
 
 pre_install() {
-  if [ "$installer" = brew ]; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  fi
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 
-  $installer update
+  brew update
 
-  if [ "$installer" = brew ]; then
-    $installer install -y yq
+  if [[ "$(uname -s)" = "Darwin" ]]; then
+    brew install -y yq
   else
-    $installer install -y yq git
+    brew install -y yq git
   fi
 }
 
@@ -50,19 +48,18 @@ git_config() {
 }
 
 install_tools() {
-  yq e $tools ~/.config/config.yml | xargs yes | $installer install
-  yq e $tools ~/.config/config.yml | xargs $installer npm install -g
-  $installer upgrade
+  yq e $tools ~/.config/config.yml | xargs brew install
+  yq e $tools ~/.config/config.yml | xargs npm install -g
   curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh | sh
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 }
 
-if [ -n "$installer" ]; then
+if [ -n "$tools" ]; then
   pre_install
   clone_config
   git_config
   install_tools
   post_install
 else
-  echo "No installer set, may be on unsupported environment"
+  echo "Error, may be on unsupported environment"
 fi
