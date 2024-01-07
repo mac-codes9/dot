@@ -1,6 +1,7 @@
 #!/bin/sh
-installer=brew
+installer=''
 tools=''
+
 if [ -d "$HOME/.termux" ]; then
   echo "Running on Termux"
   installer=pkg
@@ -49,7 +50,12 @@ install_tools() {
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 }
 
-pre_install
-clone_config
-install_tools
-post_install
+if [ -n "$installer"]; then
+  pre_install
+  clone_config
+  install_tools
+  post_install
+else 
+  echo "No installer set, may be on unsupported environment"
+fi
+
