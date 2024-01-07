@@ -25,7 +25,7 @@ pre_install() {
 }
 
 clone_config() {
-  cd && mkdir .config && cd .config
+  cd; mkdir .config; cd .config
   git init .
   git remote add origin https://github.com/mac-codes9/dot
   git pull origin master
