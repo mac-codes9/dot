@@ -32,6 +32,7 @@ clone_config() {
   ln -s ~/.config/vim/vimrc ~/.vimrc
   ln -s ~/.config/zsh/zshrc ~/.zshrc
   ln -s ~/.config/git/config ~/.gitconfig
+  ln -s ~/.config/git/msg ~/.gitmessage
   cd; git clone https://github.com/mac-codes9/dot.wiki.git notes
 }
 
