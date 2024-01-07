@@ -37,7 +37,7 @@ clone_config() {
 git_config() {
   git config --global user.email $(yq e '.git.user.name' $config)
   git config --global user.name $(yq e '.git.user.email' $config)
-  git config --global push.autoSetupRemote $(yq e 'git.push.autoSetupRemote' $config)
+  git config --global push.autoSetupRemote $(yq e '.git.push.autoSetupRemote' $config)
 }
 
 install_tools() {
