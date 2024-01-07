@@ -1,0 +1,6 @@
+# types: fix, feat, build, chore, ci, docs, style, refactor, perf & test 
+<type>(optional scope): <description>
+
+[optional body]
+
+[optional footer(s)]
