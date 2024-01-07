@@ -42,7 +42,7 @@ git_config() {
 
 install_tools() {
   brew install $(yq e $tools $config)
-  npm install -g $(yq e 'tools.node[]' $config)
+  # npm install -g $(yq e 'tools.node[]' $config)
   curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh | sh
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 }
