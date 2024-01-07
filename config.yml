@@ -10,7 +10,6 @@ tools:
       - eza
       - fd
       - gh
-      - golang
       - hyperfine
       - ncurses-utils
       - neovim
