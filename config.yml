@@ -36,9 +36,6 @@ tools:
         - zsh-users/zsh-autosuggestions
         - zsh-users/zsh-syntax-highlighting
         - hchbaw/zce.zsh
-    node:
-      - pnpm
-      - vercel
   mobile:
     packages:
       - ncurses-utils
@@ -51,8 +48,6 @@ tools:
        - neovim
        - obs
        - orbstack
-      node:
-       - bun
     linux:
       packages:
         - firefox
@@ -62,3 +57,7 @@ tools:
     nonbrew:
       - hyprland
       - eww
+  node:
+    - bun
+    - pnpm
+    - vercel
