@@ -10,10 +10,13 @@ fi
 
 if [ -d "$HOME/.termux" ]; then
   echo "Running on Termux"
+  pkg update
 elif [ "$(uname -s)" = "Darwin" ]; then
   echo "Running on macOS"
   installer=brew
   tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.computer.all.packages[] + .tools.computer.mac.packages[] | join(" ")'
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [ "$ID" = "arch" ]; then
   echo "Running on Arch Linux"
   installer=pacman
@@ -23,17 +26,14 @@ elif [ "$ID" = "ubuntu" ]; then
   echo "Running on Ubuntu"
   installer=apt
   tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.mobile.packages[] | join(" ")'
+  add-apt-repository ppa:rmescandon/yq
+  apt update
 else
   echo "Unsupported environment"
   exit
 fi
 
 pre_install() {
-  if [ "$installer" = brew ]; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  fi
-
   if [ ! -x "$(command -v git)" ]; then
     $installer $install_command yq git
   else
