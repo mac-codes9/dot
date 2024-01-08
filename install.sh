@@ -1,7 +1,7 @@
 #!/bin/sh
 installer=pkg
-install_command='install'
-tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.mobile.packages[] | join(" ")'
+install_command="install"
+tools=".tools.all.packages[] + .tools.all.zsh.packages[] + .tools.mobile.packages[] | join(" ")"
 config=~/.config/config.yml
 
 if [ -f "/etc/os-release" ]; then
@@ -14,18 +14,18 @@ if [ -d "$HOME/.termux" ]; then
 elif [ "$(uname -s)" = "Darwin" ]; then
   echo "Running on macOS"
   installer=brew
-  tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.computer.all.packages[] + .tools.computer.mac.packages[] | join(" ")'
+  tools=".tools.all.packages[] + .tools.all.zsh.packages[] + .tools.computer.all.packages[] + .tools.computer.mac.packages[] | join(" ")"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [ "$ID" = "arch" ]; then
   echo "Running on Arch Linux"
   installer=pacman
-  install_command='-Syu'
-  tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.computer.all.packages[] + .tools.computer.linux.packages[] | join(" ")'
+  install_command="-Syu"
+  tools=".tools.all.packages[] + .tools.all.zsh.packages[] + .tools.computer.all.packages[] + .tools.computer.linux.packages[] | join(" ")"
 elif [ "$ID" = "ubuntu" ]; then
   echo "Running on Ubuntu"
   installer=apt
-  tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.mobile.packages[] | join(" ")'
+  tools=".tools.all.packages[] + .tools.all.zsh.packages[] + .tools.mobile.packages[] | join(" ")"
   add-apt-repository ppa:rmescandon/yq
   apt update
 else
