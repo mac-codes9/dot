@@ -57,7 +57,7 @@ clone_config() {
 }
 
 install_tools() {
-  $installer "$install_command" "$(yq e "$tools" "$config")"
+  $installer $install_command "$(yq e "$tools" "$config")"
 
   if [ ! -x "$(command -v curl)" ]; then
     $installer $install_command curl
