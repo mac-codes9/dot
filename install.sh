@@ -4,8 +4,8 @@ install_command='install'
 tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.mobile.packages[] | join(" ")'
 config=~/.config/config.yml
 
-if [ -f "/etc/os-release" ]
-  source /etc/os-release
+if [ -f "/etc/os-release" ]; then
+  . /etc/os-release
 fi
 
 if [ -d "$HOME/.termux" ]; then
@@ -42,7 +42,9 @@ pre_install() {
 }
 
 clone_config() {
-  cd; mkdir .config; cd .config
+  cd || exit
+  mkdir .config
+  cd .config || exit
   git init .
   git remote add origin https://github.com/mac-codes9/dot
   git pull origin master
@@ -50,11 +52,12 @@ clone_config() {
   ln -s ~/.zsh/config ~/.zshrc
   ln -s ~/.git/config ~/.gitconfig
   ln -s ~/.git/message ~/.gitmessage
-  cd; git clone https://github.com/mac-codes9/dot.wiki.git notes
+  cd || exit
+  git clone https://github.com/mac-codes9/dot.wiki.git notes
 }
 
 install_tools() {
-  $installer $install_command $(yq e "$tools" "$config")
+  "$installer" "$install_command" "$(yq e "$tools" "$config")"
 
   if [ ! -x "$(command -v curl)" ]; then
     $installer $install_command curl
@@ -66,7 +69,8 @@ install_tools() {
 
 post_install() {
   mkdir docs
-  cd docs; git clone https://github.com/mac-codes9/portfolio
+  cd docs || exit
+  git clone https://github.com/mac-codes9/portfolio
   if [ "$SHELL" != "/bin/zsh" ]; then
     chsh -s zsh
   fi
