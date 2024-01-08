@@ -21,7 +21,7 @@ elif [ "$ID" = "arch" ]; then
   tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.computer.all.packages[] + .tools.computer.linux.packages[] | join(" ")'
 elif [ "$ID" = "ubuntu" ]; then
   echo "Running on Ubuntu"
-  installer="sudo apt"
+  installer=apt
   tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.mobile.packages[] | join(" ")'
 else
   echo "Unsupported environment"
