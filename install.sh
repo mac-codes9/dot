@@ -21,7 +21,7 @@ elif [ "$ID" = "arch" ]; then
   tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.computer.all.packages[] + .tools.computer.linux.packages[] | join(" ")'
 elif [ "$ID" = "ubuntu" ]; then
   echo "Running on Ubuntu"
-  installer=apt
+  installer="sudo apt"
   tools='.tools.all.packages[] + .tools.all.zsh.packages[] + .tools.mobile.packages[] | join(" ")'
 else
   echo "Unsupported environment"
@@ -29,7 +29,7 @@ else
 fi
 
 pre_install() {
-  if [ $installer = brew ]; then
+  if [ "$installer" = brew ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
