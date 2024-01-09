@@ -28,7 +28,6 @@ all:
       - marlonrichert/zsh-autocomplete
       - zsh-users/zsh-autosuggestions
       - zsh-users/zsh-syntax-highlighting
-      - hchbaw/zce.zsh
 mobile:
   - ncurses-utils
   - openssh
