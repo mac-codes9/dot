@@ -1,8 +1,8 @@
 #!/bin/sh
 installer=pkg
 install_command="install"
-tools=".tools.all.packages[] + .tools.all.zsh.packages[] + .tools.mobile.packages[] | join(\" \")"
-config=~/.config/config.yml
+set -- '.all.packages[]' '.all.zsh.packages[]' '.mobile.packages[]'
+tools_config=~/.config/tools.yml
 
 if [ -f "/etc/os-release" ]; then
   . /etc/os-release
@@ -11,27 +11,32 @@ fi
 if [ -d "$HOME/.termux" ]; then
   echo "Running on Termux"
   pkg update
-elif [ "$(uname -s)" = "Darwin" ]; then
-  echo "Running on macOS"
-  installer=brew
-  tools=".tools.all.packages[] + .tools.all.zsh.packages[] + .tools.computer.all.packages[] + .tools.computer.mac.packages[] | join(\" \")"
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-elif [ "$ID" = "arch" ]; then
-  echo "Running on Arch Linux"
-  installer=pacman
-  install_command="-Syu"
-  tools=".tools.all.packages[] + .tools.all.zsh.packages[] + .tools.computer.all.packages[] + .tools.computer.linux.packages[] | join(\" \")"
-elif [ "$ID" = "ubuntu" ]; then
-  echo "Running on Ubuntu"
-  installer=apt
-  tools=".tools.all.packages[] + .tools.all.zsh.packages[] + .tools.mobile.packages[] | join(\" \")"
-  add-apt-repository ppa:rmescandon/yq
-  apt update
 else
-  echo "Unsupported environment"
-  exit
+  set -- "$@" '.computer.all.packages[]'
+  if [ "$(uname -s)" = "Darwin" ]; then
+    echo "Running on macOS"
+    installer=brew
+    set -- "$@" '.computer.mac.packages[]'
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif [ "$ID" = "arch" ]; then
+    echo "Running on Arch Linux"
+    installer=pacman
+    install_command="-Syu"
+    set -- "$@" '.computer.linux.packages[]'
+  elif [ "$ID" = "ubuntu" ]; then
+    echo "Running on Ubuntu"
+    installer=apt
+    set -- "$@" '.computer.linux.packages[]'
+    add-apt-repository ppa:rmescandon/yq
+    apt update
+  else
+    echo "Unsupported environment"
+    exit
+  fi
 fi
+
+echo "$@"
 
 pre_install() {
   if [ ! -x "$(command -v git)" ]; then
@@ -57,7 +62,9 @@ clone_config() {
 }
 
 install_tools() {
-  $installer $install_command "$(yq e $tools "$config")"
+  $installer $install_command "$(yq e $@ "$tools_config")"
+  npm install "$(yq e '.node' "$tools_config")"
+  cargo install "$(yq e '.cargo' "$tools_config")"
 
   if [ ! -x "$(command -v curl)" ]; then
     $installer $install_command curl

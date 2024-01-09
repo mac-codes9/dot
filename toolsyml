@@ -1,0 +1,56 @@
+all:
+  packages:
+    - bat
+    - dust
+    - eza
+    - fd
+    - gh
+    - hyperfine
+    - neovim
+    - nodejs
+    - perl
+    - ripgrep
+    - rust
+    - starship
+    - tealdeer
+    - tokei
+    - vim
+    - zellij
+    - zig
+  zsh:
+    packages:
+      - atuin
+      - zoxide
+      - zsh
+    plugins:
+      - djui/alias-tips
+      - jeffreytse/zsh-vi-mode
+      - marlonrichert/zsh-autocomplete
+      - zsh-users/zsh-autosuggestions
+      - zsh-users/zsh-syntax-highlighting
+      - hchbaw/zce.zsh
+mobile:
+  packages:
+    - ncurses-utils
+    - openssh
+computer:
+  all:
+    packages:
+      - julia
+      - kitty
+      - neovim∑
+      - obs
+      - orbstack
+  linux:
+    packages:
+      - firefox
+      - hyprland
+      - eww
+  mac:
+    packages:
+      - mas
+node:
+  - bun
+  - pnpm
+  - vercel
+
