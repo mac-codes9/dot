@@ -1,5 +1,5 @@
 #!/bin/sh
-installer=pkg
+installer='yes | pkg'
 install_command="install"
 set -- '.all.packages[]' '.all.zsh.packages[]'
 tools_config=~/.config/tools.yml
