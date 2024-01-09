@@ -36,8 +36,6 @@ else
   fi
 fi
 
-echo "$@"
-
 pre_install() {
   if [ ! -x "$(command -v git)" ]; then
     $installer $install_command yq git
