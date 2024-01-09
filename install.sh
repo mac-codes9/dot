@@ -1,7 +1,7 @@
 #!/bin/sh
 installer=pkg
 install_command="install"
-set -- '.all.packages[]' '.all.zsh.packages[]' '.mobile.packages[]'
+set -- '.all.packages[]' '.all.zsh.packages[]'
 tools_config=~/.config/tools.yml
 
 if [ -f "/etc/os-release" ]; then
@@ -10,6 +10,7 @@ fi
 
 if [ -d "$HOME/.termux" ]; then
   echo "Running on Termux"
+  set -- "$@" '.mobile[]'
   pkg update
 else
   set -- "$@" '.computer.all.packages[]'
@@ -31,8 +32,13 @@ else
     add-apt-repository ppa:rmescandon/yq
     apt update
   else
-    echo "Unsupported environment"
-    exit
+    if [ "$1" ]; then
+      installer=$1
+      echo "Unsupported environment, using specified package manager"
+    else
+      echo "Unsupported environment, exiting"
+      exit
+    fi
   fi
 fi
 

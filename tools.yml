@@ -30,27 +30,22 @@ all:
       - zsh-users/zsh-syntax-highlighting
       - hchbaw/zce.zsh
 mobile:
-  packages:
-    - ncurses-utils
-    - openssh
+  - ncurses-utils
+  - openssh
 computer:
   all:
-    packages:
-      - julia
-      - kitty
-      - neovim∑
-      - obs
-      - orbstack
+    - julia
+    - kitty
+    - neovim∑
+    - obs
+    - orbstack
   linux:
-    packages:
-      - firefox
-      - hyprland
-      - eww
+    - firefox
+    - hyprland
+    - eww
   mac:
-    packages:
-      - mas
+    - mas
 node:
   - bun
   - pnpm
   - vercel
-
