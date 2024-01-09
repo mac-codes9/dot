@@ -66,7 +66,7 @@ clone_config() {
 }
 
 install_tools() {
-  $installer $install_command "$(yq e "$@" "$tools_config")"
+  $installer $install_command "$(yq r "$@" "$tools_config")"
   npm install "$(yq e '.node' "$tools_config")"
   cargo install "$(yq e '.cargo' "$tools_config")"
 
