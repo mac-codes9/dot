@@ -1,9 +1,15 @@
-alias zc="vim ~/.config/zsh/zshrc" 
+# Configuration Files
+alias zc="vim ~/.config/zsh/zshrc"
 alias zr="source ~/.zshrc"
 alias vc="vim ~/.config/vim/vimrc"
+# Editors
 alias v="vim"
+alias nv="nvim"
+
+# Unix System Tools
 alias c="clear"
 alias rmf="rm -rf"
+alias rmdf=" rm -rf .config .gitconfig .gitmessage .vimrc .zplug .zshrc docs notes"
 alias ls="eza --icons"
 alias lsa="eza -a --icons"
 alias lsag="eza -a --icons --git-ignore"
@@ -15,6 +21,8 @@ alias cat="bat -p --paging=never"
 alias du="dust"
 alias hf="hyperfine"
 alias gi="git init"
+
+# Git
 alias gaa="git add ."
 alias gc="git commit -m"
 alias gac="git add .; git commit -m"
@@ -26,6 +34,8 @@ alias gpn="git pull --no-rebase"
 alias gl="git log --oneline"
 alias gs="git status"
 alias gd="git diff"
+
+# GitHub CLI
 alias ghb="gh browse"
 alias icr="gh issue create"
 alias il="gh issue list"
@@ -41,4 +51,6 @@ alias csg="gh copilot suggest -t git"
 alias csh="gh copilot suggest -t gh"
 alias css="gh copilot suggest -t shell"
 alias ce="gh copilot explain"
+
+# Other
 alias postInstall="gh auth login; atuin login -u mac-codes9; atuin sync;"

@@ -8,10 +8,6 @@ gafc() {
   git commit -m "$2"
 }
 
-clean_dot_files() {
-  rm -rf .config .gitconfig .gitmessage .vimrc .zplug .zshrc docs notes
-}
-
 system_check() {
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     if [[ -f /etc/arch-release ]]; then
