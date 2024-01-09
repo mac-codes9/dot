@@ -11,7 +11,7 @@ fi
 if [ -d "$HOME/.termux" ]; then
   echo "Running on Termux"
   set -- "$@" '.mobile[]'
-  pkg update
+  yes | pkg update
 else
   set -- "$@" '.computer.all.packages[]'
   if [ "$(uname -s)" = "Darwin" ]; then
