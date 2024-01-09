@@ -23,3 +23,5 @@ curl -sSl https://raw.githubusercontent.com/mac-codes9/dot/master/install.sh | s
 3. Run the `postInstall` alias to setup tools that require interaction like logging in such as `gh` or `atuin`.
 
 > Note: On Ubuntu the script may need to be run with `sudo` permissions for tooling installation. For example `{script_url} | sudo sh`
+
+> Note: If running on an unused system pass a package manager as a parameter to use that. You just have to download the script and make it executable with `chmod +x` instead of running from `curl`.
