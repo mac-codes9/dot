@@ -7,10 +7,15 @@ fi
 
 source ~/.config/zsh
 
-plugins=$(yq eval '.all.zsh.plugins[]' ./tools.yml)
+
 if [[ ! -d ~/.zplug ]]; then
   git clone https://github.com/zplug/zplug ~/.zplug
   source ~/.zplug/init.zsh && zplug update --self
 fi
+plugins=$(yq eval '.all.zsh.plugins[]' ./tools.yml)
+
+for plugin in $plugins; do
+  zplug $plugin
+done
 zplug check || zplug install
 zplug load
